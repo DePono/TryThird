@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PlayStew</title>
+</head>
+<body>
+<h1>PlayStew</h1><hr>
+<h4>Информация про типы аккаунтов</h4>
+<div th:each="law : ${laws}"></div>
+<#list accounts as account>
+    <div>
+        <p><b>${account.title}</b> | ${account.descriptionAccount}</p>
+    </div>
+</#list>
+<hr>
+</body>
+</html>

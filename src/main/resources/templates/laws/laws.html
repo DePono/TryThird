@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>PlayStew</title>
+</head>
+<body>
+<h1>PlayStew</h1><hr>
+<h4>Управление законами </h4>
+<table border="1">
+    <tr>
+        <th scope="col">Описание</th>
+        <th scope="col">Время создания</th>
+        <th scope="col">Время обновления:</th>
+        <th scope="col">Управление:</th>
+    </tr>
+    <#list laws as law>
+        <tr>
+        <th>${law.lawType}</th>
+        <th>${law.timeCreateLaw}</th>
+        <th>${law.timeUpdateLaw}</th>
+        <th><form action="/laws/delete/${law.id}" method="post">
+            <input type="submit" value="Удалить закон"/>
+        </form></th>
+<#else>
+    <h3>Законов нет</h3>
+</#list>
+</body>
+</html>
